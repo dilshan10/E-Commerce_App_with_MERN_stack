@@ -24,4 +24,11 @@ router.get('/user-auth',requireSingIn, (req,res)=>{
     });
 });
 
+//
+router.get('/admin-auth',requireSingIn,isAdmin, (req,res)=>{
+    res.status(200).send({
+        ok:true
+    });
+});
+
 export default router;
